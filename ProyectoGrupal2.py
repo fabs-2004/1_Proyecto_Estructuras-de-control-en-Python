@@ -15,8 +15,14 @@ while True:
     opt=int(input("Seleccione una opción:" \
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
-                "\n3. Gestionar notas \n"))
+                "\n3. Gestionar notas " \
+                "\n4. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
-
+    
+    if opt==1:
+          print("linea de prueba")
+    elif opt==6:
+            print("Saliendo...")
+            break
     
