@@ -1,4 +1,8 @@
+'''
+Desarrollaodres: Fabiana Pinto y Daniel Garcia
 
+Proyecto de desarrollo 
+'''
 # Instaciación del diccionario vacío
 dic={}
 dic_nac={}
@@ -21,7 +25,6 @@ while True:
         tupla = (apellidos, nacimiento, curso)
         dic[dni] = tupla
         dic_nac[dni] = nacimiento
-        print(dic)
         print("Añadido con éxito.")
     elif opt==2:
         elim=input("Introducir DNI o nombre completo del estudiante: ")
@@ -42,7 +45,8 @@ while True:
         print("Número de estudiantes:", len(dic))
         for key in sorted(dic_nac, key=dic_nac.get):
             sorted_dic[key]=dic_nac[key]
-        print(sorted_dic)
+        sortList = list(sorted_dic.items())
+        print("Estudiante más joven:", sortList[-1], "\n" "Estudiante más adulto:", sortList[0])
     elif opt==6:
         print("Saliendo...")
         break
