@@ -27,9 +27,8 @@ Por hacer
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
-#value[1]
 def media(list):
-    avg=sum(list)/len(list)
+    avg=round(sum(list)/len(list), 2) #No encuentro manera de redondearlo con el módulo math
     return avg
 # Instaciación de los diccionarios y esructura de datos prinicpales
 dic={}          #diccionario principal para almacenar los datos del estudiante
@@ -62,8 +61,12 @@ while True:
         print("Añadido con éxito.")
 
     elif opt==2:
-        print(f"Lista de estudiantes: {dic.keys()}")
+        print("Lista de estudiantes: ")
+        for key, value in dic.items():
+            print(f"{key} [Nota media: {value[2]}]")
         print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
+        print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
+        
 
     elif opt==3:
         # se hace un buscador de estudiante 
