@@ -72,7 +72,7 @@ while True:
             print("datos de ", search, ":", dic[search])
         else:
             print("no encontrado")
-
+            # dic[key][1] = lista[1]
     elif opt==4:
         
         print("Saliendo...")
