@@ -69,13 +69,21 @@ while True:
         
 
     elif opt==3:
-        # se hace un buscador de estudiante 
-        search=input ("introducir nombre de estudiante: ")
-        if search in dic:
+      # se hace un buscador de estudiante 
+      search=input ("introducir nombre de estudiante: ")
+      if search in dic:
             print("datos de ", search, ":", dic[search])
-        else:
+      else:
             print("no encontrado")
             # dic[key][1] = lista[1]
+
+      indice=int("nota a modificar: ")
+      if 0<=indice<len (notas):
+            n_notas=int("nueva nota: ")
+            notas[indice]=n_notas
+    
+            
+
     elif opt==4:
         
         print("Saliendo...")
