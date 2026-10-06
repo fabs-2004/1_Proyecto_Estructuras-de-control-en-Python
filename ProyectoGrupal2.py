@@ -27,6 +27,10 @@ Por hacer
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
+#value[1]
+def media(list):
+    avg=sum(list)/len(list)
+    return avg
 # Instaciación de los diccionarios y esructura de datos prinicpales
 dic={}          #diccionario principal para almacenar los datos del estudiante
 dic_minmax={}
@@ -48,7 +52,8 @@ while True:
 
         # se genera 6 notas del 1 al 6 de forma aleatoria y se las introduce a una lista
         notas=[random.randint(0,10) for x in range(6)]
-        lista=(apll, notas)
+        nota_media=media(notas)
+        lista=(apll, notas, nota_media)
         lista_minmax=(min(notas), max(notas))
         dic[nom]=lista
         # dentro de la lista las notas hacemos el orden de mayor a menor nota 
@@ -66,4 +71,3 @@ while True:
     elif opt==4:
         print("Saliendo...")
         break
-    
