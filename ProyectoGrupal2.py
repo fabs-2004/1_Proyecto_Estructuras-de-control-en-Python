@@ -61,9 +61,15 @@ while True:
         print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
 
     elif opt==3:
-        print("") # Línea de prueba para que no de error por falta de instrucciones
+        # se hace un buscador de estudiante 
+        search=input ("introducir nombre de estudiante: ")
+        if search in dic:
+            print("datos de ", search, ":", dic[search])
+        else:
+            print("no encontrado")
 
     elif opt==4:
+        
         print("Saliendo...")
         break
     
