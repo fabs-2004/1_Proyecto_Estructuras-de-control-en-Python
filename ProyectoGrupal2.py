@@ -66,24 +66,15 @@ while True:
             print(f"{key} [Nota media: {value[2]}]")
         print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
         print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
-        
-
+ 
     elif opt==3:
-      # se hace un buscador de estudiante 
-      search=input ("introducir nombre de estudiante: ")
-      if search in dic:
+        # se hace un buscador de estudiante 
+        search=input ("introducir nombre de estudiante: ")
+        if search in dic:
             print("datos de ", search, ":", dic[search])
-      else:
+        else:
             print("no encontrado")
             # dic[key][1] = lista[1]
-
-      indice=int("nota a modificar: ")
-      if 0<=indice<len (notas):
-            n_notas=int("nueva nota: ")
-            notas[indice]=n_notas
-    
-            
-
     elif opt==4:
         
         print("Saliendo...")
