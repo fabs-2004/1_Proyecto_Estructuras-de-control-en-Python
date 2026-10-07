@@ -28,7 +28,7 @@ Por hacer
 import math
 import random
 def media(list):
-    avg=round(sum(list)/len(list), 2) #No encuentro manera de redondearlo con el módulo math
+    avg=math.ceil(sum(list)/len(list))
     return avg
 # Instaciación de los diccionarios y esructura de datos prinicpales
 dic={}          #diccionario principal para almacenar los datos del estudiante
@@ -55,7 +55,7 @@ while True:
         lista=(apll, notas, nota_media)
         lista_minmax=(min(notas), max(notas))
         dic[nom]=lista
-        # dentro de la lista las notas hacemos el orden de mayor a menor nota 
+        # creamos una lista a parte con las notas ordenadas
         print(dic)
         dic_minmax[nom]=lista_minmax
         print("Añadido con éxito.")
