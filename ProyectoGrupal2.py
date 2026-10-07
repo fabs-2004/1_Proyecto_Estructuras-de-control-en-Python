@@ -15,12 +15,12 @@ Por hacer
 - mostrar estudiantes                                   
 	mostrar todos los estudiantes                       hecho
 	nota max y min por estudiante                       hecho
-	mostrar estudiante con nota media mas alta
-	ordenados por nota media
-	- opcional - filtrar por nota media superior a x
-- cambiar o borrar nota de estudiantes
-	introducir estudiante
-	cambiar notas???
+	mostrar estudiante con nota media mas alta          hecho
+	ordenados por nota media                            hecho
+	- opcional - filtrar por nota media superior a x        falta
+- cambiar o borrar nota de estudiantes                  HECHO
+	introducir estudiante                               hecho
+	cambiar notas???                                    hecho
 - salir                                                 HECHO
 '''
 
