@@ -46,8 +46,8 @@ while True:
     # opt -> Opción seleccionada por el usuario
     # Opcion 1--> se introduce el nombre del estudiante con sus apellidos
     if opt==1:
-        nom=input("Introduzca nombre del estudiante: ")
-        apll=input("Introduzca sus apellidos: ")
+        nom=input("Introduzca nombre del estudiante: ").lower()
+        apll=input("Introduzca sus apellidos: ").lower()
 
         # se genera 6 notas del 1 al 6 de forma aleatoria y se las introduce a una lista
         notas=[random.randint(0,10) for x in range(6)]
@@ -69,7 +69,7 @@ while True:
  
     elif opt==3:
         # se hace un buscador de estudiante junto a una consulta al usuario de si desea eliminar o modificar la nota del estudiante
-        search=input ("introducir nombre de estudiante: ")
+        search=input ("introducir nombre de estudiante: ").lower()
         if search in dic:
             print("datos de ", search, ":", dic[search])
 
