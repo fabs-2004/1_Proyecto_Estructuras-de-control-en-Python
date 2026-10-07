@@ -68,13 +68,31 @@ while True:
         print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
  
     elif opt==3:
-        # se hace un buscador de estudiante 
+        # se hace un buscador de estudiante junto a una consulta al usuario de si desea eliminar o modificar la nota del estudiante
         search=input ("introducir nombre de estudiante: ")
         if search in dic:
             print("datos de ", search, ":", dic[search])
+
+            notas = dic[search][1]  # se extrae la lista de notas de la sublista
+            #creamos una accion donde el usuario escribe que funcion quiere realizar
+            accion = input("¿Quieres 'modificar' o 'eliminar' una nota?: ").lower()   #con lowe evitamos errores con las mayusuclas y las minusuclas
+            #si el uusario introduce modificar selecciona que nota quiere modificar la nueva nota y la nota se modifica
+            if accion == 'modificar': 
+                vieja = int(input("Nota que quieres cambiar: "))
+                nueva = int(input("Nueva nota: "))
+                notas[notas.index(vieja)] = nueva  # Busca y cambia directamente
+            #si el usuario quiere eliminar la not selecciona que nota quiere eliminar y se elimina de la lista
+            elif accion == 'eliminar':
+                borrar = int(input("Nota que quieres eliminar: "))
+                notas.remove(borrar)  # Borra la nota indicada
+                
+            # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio
+            dic[search] = (dic[search][0], notas, media(notas))
+            dic_minmax[search] = (min(notas), max(notas))
+            print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-            # dic[key][1] = lista[1]
+            
     elif opt==4:
         
         print("Saliendo...")
