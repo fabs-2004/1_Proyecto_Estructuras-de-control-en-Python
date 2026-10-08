@@ -86,7 +86,7 @@ while True:
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
                 
-            # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio
+            # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio 
             dic[search] = (dic[search][0], notas, media(notas))
             dic_minmax[search] = (min(notas), max(notas))
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
