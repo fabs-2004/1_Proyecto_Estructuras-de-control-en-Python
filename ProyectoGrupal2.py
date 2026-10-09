@@ -28,6 +28,7 @@ while True:
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
+                "\n4. Filtrar por nota media " \
                 "\n4. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
@@ -68,7 +69,7 @@ while True:
                 vieja = int(input("Nota que quieres cambiar: "))
                 nueva = int(input("Nueva nota: "))
                 notas[notas.index(vieja)] = nueva  # Busca y cambia directamente
-            #si el usuario quiere eliminar la not selecciona que nota quiere eliminar y se elimina de la lista
+            #si el usuario quiere eliminar la nota selecciona que nota quiere eliminar y se elimina de la lista
             elif accion == 'eliminar':
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
@@ -79,8 +80,21 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-            
     elif opt==4:
+        #se pide el valor de referencia para el promedio
+        valor_dado=float(input("introduce el valor del promedio minimo: "))
+
+        #usamos filter y lambda para filtrar los elementos del diccionario
+        estudiantes_filtro=list(filter(lambda item:item[1][2]>valor_dado, dic.items()))
+        
+        print(f"---estudiantes con promedio mayor a {valor_dado}---")
+        if estudiantes_filtro:
+            for key, value in estudiantes_filtro:
+                print(f"estudiantes: {key} | Nota media:{value[2]}")
+        else:
+            print("no hay estudiantes que superen ese proemdio")
+            
+    elif opt==5:
         
         print("Saliendo...")
         break
