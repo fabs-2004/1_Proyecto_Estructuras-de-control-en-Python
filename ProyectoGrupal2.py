@@ -5,6 +5,12 @@ Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el prog
 adicional las funciones de añadir nota, calculo de promedio y promedio mas alto, calculo de nota min y max
 y permitir actualizacion de notas o eliminarlas 
 '''
+
+'''
+
+	- opcional - filtrar por nota media superior a x
+'''
+
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
@@ -48,6 +54,12 @@ while True:
             print(f"{key} [Nota media: {value[2]}]")
         print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
         print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
+        IsFiltro=input("¿Quieres filtrar estudiantes por una nota mínima? ['Y' para confirmar] ")
+        '''
+        if IsFiltro == "Y":
+            borderline=input("Nota mínima: ")
+            # print(dict(filter(lambda item[1][2]: item[1][2]>=borderline, dic)))
+        '''
  
     elif opt==3:
         # se hace un buscador de estudiante junto a una consulta al usuario de si desea eliminar o modificar la nota del estudiante
