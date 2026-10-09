@@ -5,12 +5,6 @@ Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el prog
 adicional las funciones de añadir nota, calculo de promedio y promedio mas alto, calculo de nota min y max
 y permitir actualizacion de notas o eliminarlas 
 '''
-
-'''
-
-	- opcional - filtrar por nota media superior a x
-'''
-
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
