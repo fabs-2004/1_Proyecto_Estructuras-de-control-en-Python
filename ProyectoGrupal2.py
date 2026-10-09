@@ -29,7 +29,7 @@ while True:
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
                 "\n4. Filtrar por nota media " \
-                "\n4. Salir \n"))
+                "\n5. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
     # Opcion 1--> se introduce el nombre del estudiante con sus apellidos
