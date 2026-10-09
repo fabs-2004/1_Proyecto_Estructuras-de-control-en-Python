@@ -6,23 +6,6 @@ adicional las funciones de añadir nota, calculo de promedio y promedio mas alto
 y permitir actualizacion de notas o eliminarlas 
 '''
 
-'''
-Por hacer
-- añadir estudiante                                     HECHO
-	nombre                                              hecho
-	apellidos                                           hecho
-	nota (varias randomizadas)                          hecho
-- mostrar estudiantes                                   
-	mostrar todos los estudiantes                       hecho
-	nota max y min por estudiante                       hecho
-	mostrar estudiante con nota media mas alta          hecho
-	ordenados por nota media                            hecho
-	- opcional - filtrar por nota media superior a x        falta
-- cambiar o borrar nota de estudiantes                  HECHO
-	introducir estudiante                               hecho
-	cambiar notas???                                    hecho
-- salir                                                 HECHO
-'''
 
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
@@ -92,7 +75,7 @@ while True:
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
                 
-            # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio
+            # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio 
             dic[search] = (dic[search][0], notas, media(notas))
             dic_minmax[search] = (min(notas), max(notas))
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
