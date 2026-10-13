@@ -2,12 +2,36 @@
 Desarrollaodres: Fabiana Pinto y Daniel Garcia
 
 Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el programa debe de tener
-adicional las funciones de añadir nota, calculo de promedio y promedio mas alto, calculo de nota min y max
-y permitir actualizacion de notas o eliminarlas 
+un manejo de exepciones y de forma adicional una exportacion e importacion de archivos 
 '''
+<<<<<<< HEAD
+=======
+
+'''
+Por hacer
+-  try-except, usado para capturar errores de entrada del usuario.
+-  Excepciones específicas:
+                ValueError (edades inválidas y notas fuera de rango).
+                ZeroDivisionError (al calcular promedios sin notas).
+-  raise, usado para lanzar excepciones manualmente cuando:
+                La edad sea negativa o mayor que 130.
+                La nota esté fuera del rango permitido.
+                Se intente operar sobre un estudiante inexistente
+-  assert, para asegurar que:
+                Ningún estudiante tenga más de 10 notas.
+                La lista de estudiantes no esté vacía antes de calcular estadísticas.
+
+- Exportacion e importacion de archivos 
+
+'''
+
+>>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
+#importamos pandas para la importacion y exportacion
+import pandas as pd
+
 def media(list):
     avg=math.ceil(sum(list)/len(list))
     return avg
@@ -22,7 +46,11 @@ while True:
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
+<<<<<<< HEAD
                 "\n4. Filtrar por nota media " \
+=======
+                "\n4. Importar/Exportar" \
+>>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
                 "\n5. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
@@ -74,6 +102,7 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
+<<<<<<< HEAD
     elif opt==4:
         #se pide el valor de referencia para el promedio
         valor_dado=float(input("introduce el valor del promedio minimo: "))
@@ -88,6 +117,12 @@ while True:
         else:
             print("no hay estudiantes que superen ese proemdio")
             
+=======
+
+    elif opt==4:
+        df=pd.read_csv("archivo.txt",sep="\t")
+
+>>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
     elif opt==5:
         
         print("Saliendo...")
