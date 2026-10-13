@@ -2,26 +2,25 @@
 Desarrollaodres: Fabiana Pinto y Daniel Garcia
 
 Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el programa debe de tener
-adicional las funciones de añadir nota, calculo de promedio y promedio mas alto, calculo de nota min y max
-y permitir actualizacion de notas o eliminarlas 
+un manejo de exepciones y de forma adicional una exportacion e importacion de archivos 
 '''
 
 '''
 Por hacer
-- añadir estudiante                                     HECHO
-	nombre                                              hecho
-	apellidos                                           hecho
-	nota (varias randomizadas)                          hecho
-- mostrar estudiantes                                   
-	mostrar todos los estudiantes                       hecho
-	nota max y min por estudiante                       hecho
-	mostrar estudiante con nota media mas alta
-	ordenados por nota media
-	- opcional - filtrar por nota media superior a x
-- cambiar o borrar nota de estudiantes
-	introducir estudiante
-	cambiar notas???
-- salir                                                 HECHO
+-  try-except, usado para capturar errores de entrada del usuario.
+-  Excepciones específicas:
+                ValueError (edades inválidas y notas fuera de rango).
+                ZeroDivisionError (al calcular promedios sin notas).
+-  raise, usado para lanzar excepciones manualmente cuando:
+                La edad sea negativa o mayor que 130.
+                La nota esté fuera del rango permitido.
+                Se intente operar sobre un estudiante inexistente
+-  assert, para asegurar que:
+                Ningún estudiante tenga más de 10 notas.
+                La lista de estudiantes no esté vacía antes de calcular estadísticas.
+
+- Exportacion e importacion de archivos 
+
 '''
 
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
