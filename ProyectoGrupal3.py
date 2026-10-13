@@ -7,6 +7,7 @@ un manejo de exepciones y de forma adicional una exportacion e importacion de ar
 
 '''
 Por hacer
+-  try-except, usado para capturar errores de entrada del usuario.
 -  Excepciones específicas:
                 ValueError (edades inválidas y notas fuera de rango).
                 ZeroDivisionError (al calcular promedios sin notas).
@@ -14,7 +15,6 @@ Por hacer
                 La edad sea negativa o mayor que 130.
                 La nota esté fuera del rango permitido.
                 Se intente operar sobre un estudiante inexistente
-
                 
 -  try-except, usado para capturar errores de entrada del usuario.
 -  assert, para asegurar que:
@@ -84,15 +84,21 @@ while True:
             #si el uusario introduce modificar selecciona que nota quiere modificar la nueva nota y la nota se modifica
             if accion == 'modificar': 
                 vieja = int(input("Nota que quieres cambiar: "))
-                nueva = int(input("Nueva nota: "))
-                notas[notas.index(vieja)] = nueva  # Busca y cambia directamente
+                try:
+                    nueva = int(input("Nueva nota: "))
+                    notas[notas.index(vieja)] = nueva  # Busca y cambia directamente
+                except ValueError:
+                    "Nota no válida."
             #si el usuario quiere eliminar la nota selecciona que nota quiere eliminar y se elimina de la lista
             elif accion == 'eliminar':
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
                 
             # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio 
-            dic[search] = (dic[search][0], notas, media(notas))
+            try:
+                dic[search] = (dic[search][0], notas, media(notas))
+            except ZeroDivisionError:
+                print("No es posible hacer una media sin notas.")
             dic_minmax[search] = (min(notas), max(notas))
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
