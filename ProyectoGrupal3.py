@@ -4,12 +4,9 @@ Desarrollaodres: Fabiana Pinto y Daniel Garcia
 Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el programa debe de tener
 un manejo de exepciones y de forma adicional una exportacion e importacion de archivos 
 '''
-<<<<<<< HEAD
-=======
 
 '''
 Por hacer
--  try-except, usado para capturar errores de entrada del usuario.
 -  Excepciones específicas:
                 ValueError (edades inválidas y notas fuera de rango).
                 ZeroDivisionError (al calcular promedios sin notas).
@@ -17,6 +14,9 @@ Por hacer
                 La edad sea negativa o mayor que 130.
                 La nota esté fuera del rango permitido.
                 Se intente operar sobre un estudiante inexistente
+
+                
+-  try-except, usado para capturar errores de entrada del usuario.
 -  assert, para asegurar que:
                 Ningún estudiante tenga más de 10 notas.
                 La lista de estudiantes no esté vacía antes de calcular estadísticas.
@@ -25,7 +25,6 @@ Por hacer
 
 '''
 
->>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
@@ -46,11 +45,7 @@ while True:
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
-<<<<<<< HEAD
-                "\n4. Filtrar por nota media " \
-=======
                 "\n4. Importar/Exportar" \
->>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
                 "\n5. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
@@ -102,27 +97,10 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-<<<<<<< HEAD
-    elif opt==4:
-        #se pide el valor de referencia para el promedio
-        valor_dado=float(input("introduce el valor del promedio minimo: "))
-
-        #usamos filter y lambda para filtrar los elementos del diccionario
-        estudiantes_filtro=list(filter(lambda item:item[1][2]>valor_dado, dic.items()))
-        
-        print(f"---estudiantes con promedio mayor a {valor_dado}---")
-        if estudiantes_filtro:
-            for key, value in estudiantes_filtro:
-                print(f"estudiantes: {key} | Nota media:{value[2]}")
-        else:
-            print("no hay estudiantes que superen ese proemdio")
-            
-=======
 
     elif opt==4:
         df=pd.read_csv("archivo.txt",sep="\t")
 
->>>>>>> 711d957208e92d9bdbe7caead73080cd57d3e3bb
     elif opt==5:
         
         print("Saliendo...")
