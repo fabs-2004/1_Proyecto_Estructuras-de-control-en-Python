@@ -5,25 +5,6 @@ Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el prog
 adicional las funciones de añadir nota, calculo de promedio y promedio mas alto, calculo de nota min y max
 y permitir actualizacion de notas o eliminarlas 
 '''
-
-'''
-Por hacer
-- añadir estudiante                                     HECHO
-	nombre                                              hecho
-	apellidos                                           hecho
-	nota (varias randomizadas)                          hecho
-- mostrar estudiantes                                   
-	mostrar todos los estudiantes                       hecho
-	nota max y min por estudiante                       hecho
-	mostrar estudiante con nota media mas alta
-	ordenados por nota media
-	- opcional - filtrar por nota media superior a x
-- cambiar o borrar nota de estudiantes
-	introducir estudiante
-	cambiar notas???
-- salir                                                 HECHO
-'''
-
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
@@ -41,7 +22,8 @@ while True:
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
-                "\n4. Salir \n"))
+                "\n4. Filtrar por nota media " \
+                "\n5. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
     # Opcion 1--> se introduce el nombre del estudiante con sus apellidos
@@ -66,12 +48,6 @@ while True:
             print(f"{key} [Nota media: {value[2]}]")
         print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
         print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
-        IsFiltro=input("¿Quieres filtrar estudiantes por una nota mínima? ['Y' para confirmar] ")
-        '''
-        if IsFiltro == "Y":
-            borderline=input("Nota mínima: ")
-            # print(dict(filter(lambda item[1][2]: item[1][2]>=borderline, dic)))
-        '''
  
     elif opt==3:
         # se hace un buscador de estudiante junto a una consulta al usuario de si desea eliminar o modificar la nota del estudiante
@@ -87,7 +63,7 @@ while True:
                 vieja = int(input("Nota que quieres cambiar: "))
                 nueva = int(input("Nueva nota: "))
                 notas[notas.index(vieja)] = nueva  # Busca y cambia directamente
-            #si el usuario quiere eliminar la not selecciona que nota quiere eliminar y se elimina de la lista
+            #si el usuario quiere eliminar la nota selecciona que nota quiere eliminar y se elimina de la lista
             elif accion == 'eliminar':
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
@@ -98,8 +74,21 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-            
     elif opt==4:
+        #se pide el valor de referencia para el promedio
+        valor_dado=float(input("introduce el valor del promedio minimo: "))
+
+        #usamos filter y lambda para filtrar los elementos del diccionario
+        estudiantes_filtro=list(filter(lambda item:item[1][2]>valor_dado, dic.items()))
+        
+        print(f"---estudiantes con promedio mayor a {valor_dado}---")
+        if estudiantes_filtro:
+            for key, value in estudiantes_filtro:
+                print(f"estudiantes: {key} | Nota media:{value[2]}")
+        else:
+            print("no hay estudiantes que superen ese proemdio")
+            
+    elif opt==5:
         
         print("Saliendo...")
         break
