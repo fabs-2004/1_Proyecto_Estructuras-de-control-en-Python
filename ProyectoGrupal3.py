@@ -30,6 +30,7 @@ import math
 import random
 #importamos pandas para la importacion y exportacion
 import pandas as pd
+import json
 
 def media(list):
     avg=math.ceil(sum(list)/len(list))
@@ -99,9 +100,22 @@ while True:
             print("no encontrado")
 
     elif opt==4:
+        #importar csv/txt
         df=pd.read_csv("archivo.txt",sep="\t")
-
-    elif opt==5:
         
+        #exportar csv/txt
+        df.to_csv("archivo_exportado.txt", sep="\t", index=False)
+        
+        #importar/exportar excel
+        df=pd.read_excel("archivo.xlsx", sheet_name="hoja1")
+        df.to_excel("salida.xlsx", sheet_name="hoja1", index=False)
+
+        #importar/exportar json
+        with open("datos.json","r") as f:
+            data=json.load(f)
+
+        with open("salida.json","w") as f:
+            json.dump(data, f, indent=4)
+    elif opt==5:
         print("Saliendo...")
         break
