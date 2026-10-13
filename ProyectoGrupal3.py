@@ -29,7 +29,7 @@ Por hacer
 import math
 import random
 #importamos pandas para la importacion y exportacion
-import pandas as pd
+#import pandas as pd
 import json
 
 def media(list):
@@ -38,23 +38,25 @@ def media(list):
 # Instaciación de los diccionarios y esructura de datos prinicpales
 dic={}          #diccionario principal para almacenar los datos del estudiante
 dic_minmax={}
+opt=0
 while True:
-
-    # MENÚ DE OPCIONES
-    # se muestra un menu interactivo en bucle hasta que el usuario decida salir
-    opt=int(input("Seleccione una opción:" \
-                "\n1. Añadir estudiante" \
-                "\n2. Mostrar estudiantes" \
-                "\n3. Gestionar notas " \
-                "\n4. Importar/Exportar" \
-                "\n5. Salir \n"))
-    
+    try:
+        # MENÚ DE OPCIONES
+        # se muestra un menu interactivo en bucle hasta que el usuario decida salir
+        opt=int(input("Seleccione una opción:" \
+                    "\n1. Añadir estudiante" \
+                    "\n2. Mostrar estudiantes" \
+                    "\n3. Gestionar notas " \
+                    "\n4. Importar/Exportar" \
+                    "\n5. Salir \n"))
+    except ValueError:
+        print("el numero de opcion no exisite")
     # opt -> Opción seleccionada por el usuario
     # Opcion 1--> se introduce el nombre del estudiante con sus apellidos
     if opt==1:
         nom=input("Introduzca nombre del estudiante: ").lower()
         apll=input("Introduzca sus apellidos: ").lower()
-
+        
         # se genera 6 notas del 1 al 6 de forma aleatoria y se las introduce a una lista
         notas=[random.randint(0,10) for x in range(6)]
         nota_media=media(notas)
