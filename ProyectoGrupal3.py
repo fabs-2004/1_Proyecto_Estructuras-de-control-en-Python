@@ -28,8 +28,7 @@ Por hacer
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
-#importamos pandas para la importacion y exportacion
-#import pandas as pd
+#importamos pjson para que podamos exportar e importar archivos
 import json
 
 def media(list):
@@ -69,13 +68,18 @@ while True:
         print("Añadido con éxito.")
 
     elif opt==2:
-        #implementar aqui el assert
-        print("Lista de estudiantes: ")
-        for key, value in dic.items():
-            print(f"{key} [Nota media: {value[2]}]")
-        print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
-        print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
- 
+        try:
+            assert len(dic)>0,"error, la lista de estudiantes esta vacia"
+            #implementar aqui el assert
+            print("Lista de estudiantes: ")
+            for key, value in dic.items():
+                print(f"{key} [Nota media: {value[2]}]")
+            print(f"Estudiantes con su nota mínima y máxima: {dic_minmax}")
+            print("Ordenados por nota media:", dict(sorted(dic.items(), key = lambda item : item[1][2])))
+
+        except AssertionError as error:
+            print(error)
+
     elif opt==3:
         # se hace un buscador de estudiante junto a una consulta al usuario de si desea eliminar o modificar la nota del estudiante
         search=input ("introducir nombre de estudiante: ").lower()
@@ -100,10 +104,16 @@ while True:
             elif accion == 'eliminar':
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
+                
             #si el usuario quiere añadir otra nota adicional
             elif accion=='añadir':
-                añadir=int(input("que nota quieres añadir: "))
-                notas.append(añadir)
+                try:
+                    assert len(notas)<10, "error: el estudiante supera el maximo de notas"
+                    
+                    añadir=int(input("que nota quieres añadir: "))
+                    notas.append(añadir)
+                except AssertionError as error:
+                    print(error)
                 
             # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio 
             try:
@@ -114,26 +124,30 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-'''
+
     elif opt==4:
-        #importar csv/txt
-        df=pd.read_csv("archivo.txt",sep="\t")
-        
-        #exportar csv/txt
-        df.to_csv("archivo_exportado.txt", sep="\t", index=False)
-        
-        #importar/exportar excel
-        df=pd.read_excel("archivo.xlsx", sheet_name="hoja1")
-        df.to_excel("salida.xlsx", sheet_name="hoja1", index=False)
+        print("\n1. exportar datos \n2. importar datos")
+        try:
+            sub_opt=int(input("selecciona una opcion: "))
 
-        #importar/exportar json
-        with open("datos.json","r") as f:
-            data=json.load(f)
-
-        with open("salida.json","w") as f:
-            json.dump(data, f, indent=4)
+            if sub_opt==1:
+                #exportar_ guarda el diccionario prinicpal directamente
+                with open("estudiantes.json", "w", encoding="utf-8") as f:
+                    json.dump(dic,f,ensure_ascii=False,indent=4)
+                print("exportado correctamente")
+            elif sub_opt==2:
+                #importar: carga los datos del archivo al diccionario
+                try:
+                    with open("estudiantes.json","r",encoding="utf-8")as f:
+                        dic.clear()
+                        dic.update(json.load(f))
+                    print("importado con exito")
+                except FileNotFoundError:
+                    print("error: aun no hya ningun archivo guardado")
+        except ValueError:
+            print("entrada no valida")
 
     elif opt==5:
         print("Saliendo...")
         break
-'''
+ 
