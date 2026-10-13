@@ -51,3 +51,11 @@ stock negativo.
 • Calcular el valor total del inventario y verificarlo manualmente.
 • Validar las estadísticas por categoría (suma de unidades y de unidades*precio).
 '''
+
+opt=int(input("""1. Añadir producto
+    2. Mostrar inventario completo
+    3. Buscar producto por nombre
+    4. Modificar stock de un producto
+    5. Mostrar valor total del inventario
+    6. Mostrar estadísticas por categoría (tuplas y listas)
+    0. Salir"""))
