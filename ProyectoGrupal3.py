@@ -26,6 +26,9 @@ Por hacer
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
+#importamos pandas para la importacion y exportacion
+import pandas as pd
+
 def media(list):
     avg=math.ceil(sum(list)/len(list))
     return avg
@@ -40,7 +43,8 @@ while True:
                 "\n1. Añadir estudiante" \
                 "\n2. Mostrar estudiantes" \
                 "\n3. Gestionar notas " \
-                "\n4. Salir \n"))
+                "\n4. Importar/Exportar" \
+                "\n5. Salir \n"))
     
     # opt -> Opción seleccionada por el usuario
     # Opcion 1--> se introduce el nombre del estudiante con sus apellidos
@@ -97,8 +101,11 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-            
+
     elif opt==4:
+        df=pd.read_csv("archivo.txt",sep="\t")
+
+    elif opt==5:
         
         print("Saliendo...")
         break
