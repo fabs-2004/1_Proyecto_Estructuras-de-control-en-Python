@@ -16,7 +16,7 @@ Por hacer
                 La nota esté fuera del rango permitido.
                 Se intente operar sobre un estudiante inexistente
                 
--  try-except, usado para capturar errores de entrada del usuario.
+-  try-except, usado para capturar errores de entrada del usuario.          HECHO   
 -  assert, para asegurar que:
                 Ningún estudiante tenga más de 10 notas.
                 La lista de estudiantes no esté vacía antes de calcular estadísticas.
@@ -69,6 +69,7 @@ while True:
         print("Añadido con éxito.")
 
     elif opt==2:
+        #implementar aqui el assert
         print("Lista de estudiantes: ")
         for key, value in dic.items():
             print(f"{key} [Nota media: {value[2]}]")
@@ -81,9 +82,12 @@ while True:
         if search in dic:
             print("datos de ", search, ":", dic[search])
 
+            #AÑADIR OPCION DE AÑADIR NOTA PARA QUE SE HAGA ASSERT DE LIMITAR A 10 NOTAS
+
+
             notas = dic[search][1]  # se extrae la lista de notas de la sublista
             #creamos una accion donde el usuario escribe que funcion quiere realizar
-            accion = input("¿Quieres 'modificar' o 'eliminar' una nota?: ").lower()   #con lowe evitamos errores con las mayusuclas y las minusuclas
+            accion = input("¿Quieres 'modificar', 'eliminar' o 'añadir' una nota?: ").lower()   #con lowe evitamos errores con las mayusuclas y las minusuclas
             #si el uusario introduce modificar selecciona que nota quiere modificar la nueva nota y la nota se modifica
             if accion == 'modificar': 
                 vieja = int(input("Nota que quieres cambiar: "))
@@ -96,6 +100,10 @@ while True:
             elif accion == 'eliminar':
                 borrar = int(input("Nota que quieres eliminar: "))
                 notas.remove(borrar)  # Borra la nota indicada
+            #si el usuario quiere añadir otra nota adicional
+            elif accion=='añadir':
+                añadir=int(input("que nota quieres añadir: "))
+                notas.append(añadir)
                 
             # Actualizamos todo automáticamente tras el cambio tanto la nota maxima, la minima y el promedio 
             try:
