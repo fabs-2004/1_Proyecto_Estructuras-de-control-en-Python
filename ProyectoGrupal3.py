@@ -114,7 +114,7 @@ while True:
             print("¡Actualizado con éxito! Nuevos datos:", dic[search])
         else:
             print("no encontrado")
-
+'''
     elif opt==4:
         #importar csv/txt
         df=pd.read_csv("archivo.txt",sep="\t")
@@ -132,6 +132,8 @@ while True:
 
         with open("salida.json","w") as f:
             json.dump(data, f, indent=4)
+
     elif opt==5:
         print("Saliendo...")
         break
+'''
