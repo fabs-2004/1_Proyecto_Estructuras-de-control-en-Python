@@ -5,26 +5,6 @@ Proyecto de desarrollo de programa ampliado de estudiantes, en este caso el prog
 un manejo de exepciones y de forma adicional una exportacion e importacion de archivos 
 '''
 
-'''
-Por hacer
--  try-except, usado para capturar errores de entrada del usuario.
--  Excepciones específicas:
-                ValueError (edades inválidas y notas fuera de rango).
-                ZeroDivisionError (al calcular promedios sin notas).
--  raise, usado para lanzar excepciones manualmente cuando:
-                La edad sea negativa o mayor que 130.
-                La nota esté fuera del rango permitido.
-                Se intente operar sobre un estudiante inexistente
-                
--  try-except, usado para capturar errores de entrada del usuario.          HECHO   
--  assert, para asegurar que:
-                Ningún estudiante tenga más de 10 notas.
-                La lista de estudiantes no esté vacía antes de calcular estadísticas.
-
-- Exportacion e importacion de archivos 
-
-'''
-
 # Importación de la librerías math y random para usarla en la generación de notas (randomizar y redondear)
 import math
 import random
