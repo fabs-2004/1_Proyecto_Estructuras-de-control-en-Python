@@ -118,19 +118,19 @@ while True:
 
     elif opt==3:
         #buscar producto por nombre
-        print("pendiente")
+        print('pendiente')
 
     elif opt==4:
-            #modificar stock de un producto
-            print("pendiente")
+        #modificar stock de un producto
+        print("pendiente")
 
     elif opt==5:
-            #mostrar valor total del inventario
-            print("pendiente")
+        #mostrar valor total del inventario
+        print("pendiente")
 
     elif opt==6:
-            #mostrar estadisticas por categoria
-            print("pendiente")
+        #mostrar estadisticas por categoria
+        print("pendiente")
 
     elif opt==0:
             print("saliendo del programa...")
