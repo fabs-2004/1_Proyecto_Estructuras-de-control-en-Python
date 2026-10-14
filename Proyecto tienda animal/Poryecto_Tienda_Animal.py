@@ -112,7 +112,7 @@ while True:
                 estado="activo" if producto["activo"] else "inactivo"
                 print(F"-producto: {producto['nombre'].capitalize()} | "
                       f"categoria: {producto['categoria'].capitalize()} | "
-                      f"unidades: {producto['unidades'].capitalize()} | "
+                      f"unidades: {producto['unidades']} | "
                       f"precio: {producto['precio']}€ | "
                       f"estado: {estado} ")
 
